@@ -1,11 +1,11 @@
-w, h = 1000, 1000
+w, h = 1280, 720
 
 # Where the code starts and ends
-code_start = h/40
-code_end = h - h/40
+code_start = h/60
+code_end = h - h/100
 
 # Code Line Thickness
-code_size = 10
+code_size = 7
 
 # Code Segments (Number and length)
 min_segments = 3
@@ -20,19 +20,19 @@ code_sep = (code_end - code_start)/code_lines
 line_break_chance = .4
 
 # Indent values
-indent_size = 50
-max_indents = 4
-indent_inc_chance = .2
+indent_size = 20
+max_indents = 6
+indent_inc_chance = .4
 indent_dec_chance = .3
 
 # Random Colors
-random_colors = True
+random_colors = False
 
 # Higher value means the color will change more often
-change_chance = .1
+change_chance = .05
 
 # If you want to use your own color palette, just set random colors to false
-color_palette = [(0, 255, 255), (200, 100, 100)]
+color_palette = [(229, 115, 118), (235, 167, 114), (114, 178, 241), (211, 173, 223), (170, 198, 166)]
 
 # Background Color
 bc = (30, 30, 30)
@@ -70,7 +70,7 @@ def setup():
             line_x = indent_size + (indent * indent_size)
             line_segments = int(random(min_segments, max_segments))
             for j in range(line_segments):
-                if (random_colors == False):
+                if (random_colors == False and random(1) < change_chance):
                     set_palette_color()
                 elif (random_colors == True and random(1) < change_chance):
                     set_random_color()
