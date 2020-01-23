@@ -1,26 +1,26 @@
-w, h = 1280, 720
+w, h = 1200, 1200
 
 # Where the code starts and ends
 code_start = h/60
 code_end = h - h/100
 
 # Code Line Thickness
-code_size = 7
+code_size = 10
 
 # Code Segments (Number and length)
-min_segments = 3
-max_segments = 10
-min_segment_length = 1
-max_segment_length = 40
+min_segments = 5
+max_segments = 16
+min_segment_length = 5
+max_segment_length = 60
 segment_sep = 20
 
 # Lines of code
-code_lines = 50
+code_lines = 60
 code_sep = (code_end - code_start)/code_lines
 line_break_chance = .4
 
 # Indent values
-indent_size = 20
+indent_size = 50
 max_indents = 6
 indent_inc_chance = .4
 indent_dec_chance = .3
@@ -29,10 +29,11 @@ indent_dec_chance = .3
 random_colors = False
 
 # Higher value means the color will change more often
-change_chance = .05
+change_chance = .4
 
 # If you want to use your own color palette, just set random colors to false
-color_palette = [(229, 115, 118), (235, 167, 114), (114, 178, 241), (211, 173, 223), (170, 198, 166)]
+#colors = [(127, 199, 175), (218, 216, 167), (167, 219, 216), (237, 118, 112)]
+colors = [(92,97,130), (79,164,165), (202,166,122), (212,117,100)]
 
 # Background Color
 bc = (30, 30, 30)
@@ -43,7 +44,7 @@ def set_random_color():
     stroke(random(50, 200), random(50, 200), random(50, 200))
 
 def set_palette_color():
-    c = color_palette[int(random(len(color_palette)))]
+    c = colors[int(random(len(colors)))]
     stroke(c[0], c[1], c[2])
 
 def setup():
@@ -66,14 +67,14 @@ def setup():
     line_y = code_start
     indent = 0
     for i in range(code_lines):
+        # if (i < 4):
+        #     stroke(*colors[i])
         if (not (random(1) < line_break_chance and indent is 0)):
             line_x = indent_size + (indent * indent_size)
             line_segments = int(random(min_segments, max_segments))
             for j in range(line_segments):
-                if (random_colors == False and random(1) < change_chance):
+                if (random(1) < change_chance):
                     set_palette_color()
-                elif (random_colors == True and random(1) < change_chance):
-                    set_random_color()
                 segment_length = random(min_segment_length, max_segment_length)
                 
                 line(line_x, line_y, line_x + segment_length, line_y)
@@ -89,5 +90,6 @@ def setup():
         line_y += code_sep
         
 
-        
-    save('Examples/CodeArt-' + str(int(random(10000))) + '.png')
+    seed = int(random(10000))
+    save('Examples/Reddit.png')
+    print(seed)
