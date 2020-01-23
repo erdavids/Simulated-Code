@@ -13,4 +13,4 @@ Other links:
 
 # Examples
 
-<p align="center"><img src="https://github.com/erdavids/Simulated-Code/blob/master/Favorites/git-display.png"></p>
+<p align="center"><img src="https://github.com/erdavids/Simulated-Code/blob/master/Favorites/Reddit.png"></p>
