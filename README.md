@@ -7,9 +7,6 @@ If you want to run this project yourself, make sure to download [Processing](pro
 Other links:
 - [More Generative Art](https://github.com/erdavids/Generative-Art)
 - [YouTube Channel](https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ)
-- [Twitter](https://twitter.com/TheBuffED)
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A6YGXL)
 
 # Examples
 
